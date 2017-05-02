@@ -1,41 +1,29 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <title>
-        Login page
-    </title>
-</head>
-
-<body>
-    <h1 style="font-family:Comic Sans Ms;text-align=" center ";font-size:20pt;
-color:#00FF00;>
-Simple Login Page
-</h1>
-<form name="login">
-<select name="username">
+    <head>
+        <meta charset="utf-8">
+        <title>A Simple Page with CKEditor</title>
+        <!-- Make sure the path to CKEditor is correct. -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+        <script src="./doc-editor/ckeditor.js"></script>
+    </head>
+    <body>
+    <select name="username">
   <option value="select user">Please Select User</option>
   <option value="tarani" id="1">Tarani</option>
   <option value="vikas" id="2">Vikas</option>
   <option value="kapil" id="3">Kapil</option>
   <option value="pushpendra" id="4">Pushpendra</option>
 </select>
-<input type="button" onclick="check(this.form) " value="Go To Document Editor "/>
-</form>
-<script>
-function check(form)/*function to check userid & password*/
-{
- /*the following code checkes whether the entered userid and password are matching*/
- if(form.username.value !== "select user ")
-  {
-    var username = form.username.value;
-    var uid = form.username[form.username.selectedIndex].id;
-    window.location = 'editor.html?id=' + uid + '&name=' + username /*opens the target page while Id & password matches*/
-  }
- else
- {
-   alert("Error : Please select User ")/*displays error message*/
-  }
-}
-</script>
-</body>
+        <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+        </form>
+    </body>
 </html>
