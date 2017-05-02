@@ -16,6 +16,9 @@ $(document).ready(function() {
         select.options[i] = option;
     });
     $('#username').change(onUserChanged);
+    setTimeout(function(){
+        $('#username').trigger("change",1);
+    },500)
 
     function onUserChanged(event) {
         var target = event.currentTarget;
