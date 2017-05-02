@@ -28,7 +28,7 @@ function check(form)/*function to check userid & password*/
  if(form.username.value !== "select user ")
   {
     var username = form.username.value;
-    var uid = form.username.id;
+    var uid = form.username[form.username.selectedIndex].id;
     window.location = 'editor.html?id=' + uid + '&name=' + username /*opens the target page while Id & password matches*/
   }
  else
