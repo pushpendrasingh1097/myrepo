@@ -43,7 +43,10 @@ $(document).ready(function() {
 
 
     function loadEditor(id, focus) {
-        editor = CKEDITOR.replace(id);
+        editor = CKEDITOR.replace(id,
+            {
+                height:"450"
+            });
 
         function onConfigLoaded(e) {
             var conf = e.editor.config;
